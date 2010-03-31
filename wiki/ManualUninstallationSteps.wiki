@@ -1,0 +1,24 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+This document will guide you through steps to uninstall a connector manually.
+
+
+= Details =
+
+*Steps For Windows:*
+
+_Step 1:_ Stop connector service
+
+_Step 2:_ Delete connector service
+
+_Step 3:_ Delete connector folders
+
+_Step 4:_ Registry cleanup
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
