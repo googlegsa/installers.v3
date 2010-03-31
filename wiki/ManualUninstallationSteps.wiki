@@ -1,4 +1,4 @@
-#Manual Connector Uninstallation
+Manual Connector Uninstallation
 
 = Introduction =
 
@@ -19,7 +19,7 @@ _Step 4:_ Registry cleanup
 
 *_Step 1:_* Stop connector service: Connector service can be stopped from 
 
-start menu ->> Program files ->> Google Search Appliance Connectors  ->> <_Connector Name_> ->> Stop <_connector type_> Connector Service
+start menu ->> Program files ->> Google Search Appliance Connectors ->> <_Connector Name_> ->> Stop <_connector type_> Connector Service
 
 OR
 
