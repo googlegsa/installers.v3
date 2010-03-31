@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#Manual Connector Uninstallation
 
 = Introduction =
 
@@ -30,7 +30,7 @@ and stop the connector service.
 
 SC delete <_Connector service name_> 
 
-*_Step 3:_* Delete folder C:\Program Files\GoogleConnectors\<_Connector Name_>
+*_Step 3:_* Delete folder <_installation path_>\GoogleConnectors\<_Connector Name_>
 
 *_Step 4:_* To delete registry entry follow steps:
 
@@ -46,7 +46,7 @@ _Step 1:_ Stop connector service
 
 _Step 2:_ Delete connector folders
 
-_Step 4:_ Delete entries from preferences
+_Step 4:_ Delete connector entries from preferences
 
 
 *_Step 1:_* To stop connector service execute the command
@@ -55,9 +55,9 @@ _./Stop_SharePoint_Connector_Console_
 
 *_Step 2:_ Delete connector folders
 
-delete folder root/GoogleConnectors/<Connector Name>
+delete folder <_installation path_>/GoogleConnectors/<Connector Name>
 
-*_Step 3:_ To delete entries from preferences
+*_Step 3:_ To delete connector entries from preferences
 
         ** Navigate to /etc/.java/.systemPrefs/Google/Connectors/
 
