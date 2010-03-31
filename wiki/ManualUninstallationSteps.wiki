@@ -17,8 +17,23 @@ _Step 3:_ Delete connector folders
 
 _Step 4:_ Registry cleanup
 
+*_Step 1:_* Stop connector service: Connector service can be stopped from 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+*start menu* ->> *Program files* ->> *Google Search Appliance Connectors*  ->> *<_Connector Name_>* ->> *Stop <_connector type_> Connector Service*
+
+                               * OR*
+
+Goto Services (Start -->> run -->> services.msc)
+and stop the connector service.
+
+*_Step 2:_* To delete connector service launch command prompt and execute command
+
+SC delete <_ConnectorServiceName_>
+
+*Steps For Linux:*
+
+_Step 1:_ Stop connector service
+
+_Step 2:_ Delete connector folders
+
+_Step 4:_ Delete entries from preferences
