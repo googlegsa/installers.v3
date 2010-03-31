@@ -19,18 +19,18 @@ _Step 4:_ Registry cleanup
 
 *_Step 1:_* Stop connector service: Connector service can be stopped from 
 
-*start menu ->> Program files ->> Google Search Appliance Connectors  ->> <_Connector Name_> ->> Stop <_connector type_> Connector Service*
+start menu ->> Program files ->> Google Search Appliance Connectors  ->> <_Connector Name_> ->> Stop <_connector type_> Connector Service
 
-*OR*
+OR
 
-*Goto Services (Start -->> run -->> services.msc)*
+Goto Services (Start -->> run -->> services.msc)
 and stop the connector service.
 
 *_Step 2:_* To delete connector service launch command prompt and execute command
 
-*SC delete <_Connector ServiceName_>* 
+SC delete <_Connector service name_> 
 
-*_Step 3:_* Delete folder *C:\Program Files\GoogleConnectors\<_Connector Name_>*
+*_Step 3:_* Delete folder C:\Program Files\GoogleConnectors\<_Connector Name_>
 
 *_Step 4:_* To delete registry entry follow steps:
 
@@ -47,3 +47,18 @@ _Step 1:_ Stop connector service
 _Step 2:_ Delete connector folders
 
 _Step 4:_ Delete entries from preferences
+
+
+*_Step 1:_* To stop connector service execute the command
+
+_./Stop_SharePoint_Connector_Console_
+
+*_Step 2:_ Delete connector folders
+
+delete folder root/GoogleConnectors/<Connector Name>
+
+*_Step 3:_ To delete entries from preferences
+
+        ** Navigate to /etc/.java/.systemPrefs/Google/Connectors/
+
+        ** Delete folder <Connector Name>
