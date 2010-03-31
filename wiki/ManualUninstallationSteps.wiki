@@ -19,16 +19,26 @@ _Step 4:_ Registry cleanup
 
 *_Step 1:_* Stop connector service: Connector service can be stopped from 
 
-*start menu* ->> *Program files* ->> *Google Search Appliance Connectors*  ->> *<_Connector Name_>* ->> *Stop <_connector type_> Connector Service*
+*start menu ->> Program files ->> Google Search Appliance Connectors  ->> <_Connector Name_> ->> Stop <_connector type_> Connector Service*
 
-                               * OR*
+*OR*
 
-Goto Services (Start -->> run -->> services.msc)
+*Goto Services (Start -->> run -->> services.msc)*
 and stop the connector service.
 
 *_Step 2:_* To delete connector service launch command prompt and execute command
 
-SC delete <_ConnectorServiceName_>
+*SC delete <_Connector ServiceName_>* 
+
+*_Step 3:_* Delete folder *C:\Program Files\GoogleConnectors\<_Connector Name_>*
+
+*_Step 4:_* To delete registry entry follow steps:
+
+            **Launch Registry Editor : Start -->> Run -->> regedit
+
+            **Goto path My Computer\HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Prefs\
+
+            **Delete folder entry /Google/Connectors/<_Connector Name_>
 
 *Steps For Linux:*
 
