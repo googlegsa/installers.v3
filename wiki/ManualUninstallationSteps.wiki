@@ -1,4 +1,4 @@
-Steps to manually  un-install connector installed by the Google Connector installer
+=summary Steps to manually  un-install connector installed by the Google Connector installer
 
 == Introduction ==
 
