@@ -4,6 +4,8 @@
 
 Even if the Java (1.5 or above) is installed, getting  error "Could not find a Valid Java Virtual machine to load" when invoke the Connector Installer.
 
+*Enviornment:*
+64 bit window 2008 r2 
 
 = Details =
 
