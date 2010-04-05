@@ -1,4 +1,4 @@
-#Summary Troubleshooting Connector Installer Start up due to Java Error.  
+#summary Troubleshooting Connector Installer Start up due to Java Error.
 
 = Introduction =
 
