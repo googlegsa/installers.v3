@@ -1,13 +1,13 @@
 #summary Troubleshooting Connector Installer Start up due to Java Error.
 
-= Introduction =
+== Introduction ==
 
 Even if the Java (1.5 or above) is installed, getting  error "Could not find a Valid Java Virtual machine to load" when invoke the Connector Installer.
 
 *Enviornment:*
 64 bit window 2008 r2 
 
-= Details =
+== Details ==
 
 1) Make sure you have Java 1.5.x or above installed on your system.
 
