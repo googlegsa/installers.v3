@@ -1,4 +1,4 @@
-#summary Troubleshooting guide for connector installers.
+#summary Troubleshooting guide for connector installers
 
 ==_Problem_==
 
