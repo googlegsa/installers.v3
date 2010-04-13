@@ -1,6 +1,6 @@
 #summary Troubleshooting guide for connector installers.
 
-=_Problem_=
+==_Problem_==
 
 Tomcat fails to start when connector is installed on 64-bit windows using installer.
 
@@ -27,9 +27,9 @@ Procrun finished.
 
 *Enviornment:*
 
-64 bit window 2008 R2 
+64 bit Windows 2008 R2 
 
-=_Solution_=
+==_Solution_==
 
      Check if the file "msvrc71.dll" is present in windows\system directory 
 
@@ -40,14 +40,14 @@ Procrun finished.
 
 
 
-=_Problem_=
+==_Problem_==
 
 Even if the Java (1.5 or above) is installed, getting  error "Could not find a Valid Java Virtual machine to load" when invoke the Connector Installer.
 
 *Enviornment:*
-64 bit window 2008 R2 
+64 bit Windows 2008 R2 
 
-=_Solution_=
+==_Solution_==
 
 1) Make sure you have Java 1.5.x or above installed on your system.
 
