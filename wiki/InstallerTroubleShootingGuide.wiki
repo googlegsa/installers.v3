@@ -4,9 +4,21 @@
 
 Tomcat fails to start when connector is installed on 64-bit windows using installer.
 
+The Tomcat logs report:
+
+[2010-04-06 12:35:41] [info] Procrun (2.0.4.0) started
+[2010-04-06 12:35:41] [info] Running Service...
+[2010-04-06 12:35:41] [info] Starting service...
+[2010-04-06 12:35:41] [174  javajni.c] [error] The specified module could not be found.
+[2010-04-06 12:35:41] [994  prunsrv.c] [error] Failed creating java
+[2010-04-06 12:35:41] [1269 prunsrv.c] [error] ServiceStart returned 1
+[2010-04-06 12:35:41] [info] Run service finished.
+[2010-04-06 12:35:41] [info] Procrun finished.
+
+
 *Enviornment:*
 
-64 bit window 2008 r2 
+64 bit window 2008 R2 
 
 *Solution 1*
 
@@ -21,7 +33,7 @@ Tomcat fails to start when connector is installed on 64-bit windows using instal
 Even if the Java (1.5 or above) is installed, getting  error "Could not find a Valid Java Virtual machine to load" when invoke the Connector Installer.
 
 *Enviornment:*
-64 bit window 2008 r2 
+64 bit window 2008 R2 
 
 *Solution 2*
 
