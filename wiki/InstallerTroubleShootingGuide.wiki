@@ -1,0 +1,14 @@
+Troubleshooting guide for connector installers.
+
+*Problem Statement 1*
+
+Tomcat fails to start when connector is installed on 64-bit windows using installer.
+
+*Solution*
+
+     Check if the file "msvrc71.dll" is present in windows\system directory 
+
+     if the file is not present then copy the msvcr71.dll included in JDK 1.6 to
+     windows\system directory 
+    
+
