@@ -4,23 +4,23 @@
 
 Tomcat fails to start when connector is installed on 64-bit windows using installer.
 
-The Tomcat logs report:
+The Tomcat logs report shows following log messages:
 
-[info]Procrun (2.0.4.0) started
+Procrun (2.0.4.0) started
 
-[info]Running Service...
+Running Service...
 
-[info]Starting service...
+Starting service...
 
-[174 javajni.c][error]The specified module could not be found.
+The specified module could not be found.
 
-[994 prunsrv.c][error]Failed creating java
+Failed creating java
 
-[1269 prunsrv.c][error]ServiceStart returned 1
+ServiceStart returned 1
 
-[info]Run service finished.
+Run service finished.
 
-[info]Procrun finished.
+Procrun finished.
 
 
 
