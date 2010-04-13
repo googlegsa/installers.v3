@@ -1,4 +1,4 @@
-#Troubleshooting guide for connector installers.
+#summary Troubleshooting guide for connector installers.
 
 *Problem Statement 1*
 
