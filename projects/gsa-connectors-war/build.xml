@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ Copyright (C) 2010 Google Inc.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http:www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<!-- Author: Darshan Jawalebhoi -->
+
+<!-- 
+ This is a ANT build script to generate the a single connector manager WAR 
+ for multiple connectors. The connectors currently bundled are:
+      1. Sharepoint Connector
+      2. File Systems Connector
+-->
+<project name="gsa-connectors-war" default="build-all" basedir=".">
+	<property file="build.properties" />
+	<property name="build-dir" value="build" />
+	<property name="third-party-dir" value="${build-dir}/third-party" />
+	<property name="downloads-dir" value="${third-party-dir}/downloads" />
+	<property name="deliverables" value="${build-dir}/deliverables" />
+	<property name="war-exploded" value="${deliverables}/war-exploded" />
+
+	<!-- Initialize -->
+	<target name="clean">
+		<delete dir="${build-dir}" />
+	</target>
+	<target name="init" depends="clean">
+		<mkdir dir="${build-dir}" />
+		<mkdir dir="${downloads-dir}" />
+		<mkdir dir="${war-exploded}" />
+	</target>
+
+	<!-- Download and extract thrid party components -->
+	<target name="fetch-third-party" depends="fetch-connector-manager,fetch-connector-sharepoint,fetch-connector-filesystem" />
+	<target name="fetch-connector-manager">
+		<get dest="${downloads-dir}/connector-manager.zip" src="${connector.manager.download-url}">
+		</get>
+		<unzip dest="${third-party-dir}" src="${downloads-dir}/connector-manager.zip" overwrite="true">
+		</unzip>
+	</target>
+	<target name="fetch-connector-sharepoint">
+		<get dest="${downloads-dir}/connector-sharepoint.zip" src="${connector.sharepoint.download-url}">
+		</get>
+		<unzip dest="${third-party-dir}" src="${downloads-dir}/connector-sharepoint.zip" overwrite="true">
+		</unzip>
+	</target>
+	<target name="fetch-connector-filesystem">
+		<get dest="${downloads-dir}/connector-filesystem.zip" src="${connector.filesystem.download-url}">
+		</get>
+		<unzip dest="${third-party-dir}/connector-filesystem-${dot-version}" src="${downloads-dir}/connector-filesystem.zip" overwrite="true">
+		</unzip>
+	</target>
+
+
+	<!-- Construct WAR -->
+	<target name="assemble-web-app" depends="">
+		<unwar src="${third-party-dir}/connector-manager-${dot-version}/connector-manager.war" dest="${war-exploded}">
+		</unwar>
+
+		<!-- Place SharePoint Connector components in the WAR file. -->
+		<copy todir="${war-exploded}/WEB-INF/lib" file="${third-party-dir}/connector-sharepoint-${dot-version}/connector-sharepoint.jar" />
+		<copy todir="${war-exploded}/WEB-INF/lib" flatten="true">
+			<fileset dir="${third-party-dir}/connector-sharepoint-${dot-version}/lib">
+			</fileset>
+		</copy>
+		<mkdir dir="${war-exploded}/WEB-INF/classes" />
+
+		<!-- Place FileSystem Connector components in the WAR file. -->
+		<copy todir="${war-exploded}/WEB-INF/lib" file="${third-party-dir}/connector-filesystem-${dot-version}/connector-filesystem.jar" />
+		<copy todir="${war-exploded}/WEB-INF/lib" flatten="true">
+			<fileset dir="${third-party-dir}/connector-filesystem-${dot-version}/Lib">
+			</fileset>
+		</copy>
+		<mkdir dir="${war-exploded}/WEB-INF/classes" />
+	</target>
+
+	<target name="build-all" depends="clean,init,fetch-third-party,assemble-web-app,war-offboard,war-onboard">
+	</target>
+
+	<target name="onboard-specific">
+		<!-- include corrsponding config files -->
+		<copy todir="${war-exploded}/WEB-INF/classes" file="config/onboard/logging.properties" />
+		<!-- Lock down the manager. -->
+		<replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=false" value="manager.locked=true">
+		</replace>
+	</target>
+
+	<target name="offboard-specific">
+		<!-- include corrsponding config files -->
+		<copy todir="${war-exploded}/WEB-INF/classes" file="config/offboard/logging.properties" />
+		<!-- Unlock the manager. -->
+		<replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=true" value="manager.locked=false">
+		</replace>
+	</target>
+
+	<!-- Build GSA Connectors WAR off-board -->
+	<target name="war-offboard" depends="offboard-specific">
+		<war destfile="${deliverables}/gsa-connectors-offboard.war" basedir="${war-exploded}">
+			<!-- TODO: Add Manifest details -->
+		</war>
+	</target>
+
+	<!-- Build GSA Connectors WAR on-board -->
+	<target name="war-onboard" depends="onboard-specific">
+		<war destfile="${deliverables}/connector-manager.war" basedir="${war-exploded}">
+			<!-- TODO: Add Manifest details -->
+		</war>
+	</target>
+</project>
+
