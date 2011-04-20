@@ -67,4 +67,5 @@ http://publib.boulder.ibm.com/infocenter/dsichelp/ds8000ic/index.jsp?topic=/com.
 ==_Solution2_==
 
 1.Set Java path under PATH environment variable. This path should be full path till ../Java/bin folder. For example: C:\Program Files\Java\JDK1.6.0_24\bin
+
 2. Launch the installer.
