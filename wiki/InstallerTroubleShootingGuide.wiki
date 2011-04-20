@@ -2,7 +2,7 @@
 
 ==_Problem_==
 
-Tomcat fails to start when connector is installed on 64-bit windows using installer.
+Tomcat fails to start when connector is installed on 64-bit windows using installer (GCI).
 
 The Tomcat logs report shows following log messages:
 
