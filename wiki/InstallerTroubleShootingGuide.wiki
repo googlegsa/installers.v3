@@ -47,9 +47,9 @@ Even if the Java (1.5 or above) is installed, getting  error "Could not find a V
 *Enviornment:*
 64 bit Windows 2008 R2 
 
-==_Solution_==
+==_Solution1_==
 
-1) Make sure you have Java 1.5.x or above installed on your system.
+1) Make sure you have JDK 1.5.x or above installed on your system.
 
 2) From the Console run the Connector Installer using following command.
 
@@ -63,3 +63,8 @@ Even if the Java (1.5 or above) is installed, getting  error "Could not find a V
 *Reference:*
 
 http://publib.boulder.ibm.com/infocenter/dsichelp/ds8000ic/index.jsp?topic=/com.ibm.storage.ssic.help.doc/f2c_clijavaerror_2lfq3j.html
+
+==_Solution2_==
+
+1.Set Java path under PATH environment variable. This path should be full path till ../Java/bin folder. For example: C:\Program Files\Java\JDK1.6.0_24\bin
+2. Launch the installer.
