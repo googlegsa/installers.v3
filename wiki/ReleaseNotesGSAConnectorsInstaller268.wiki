@@ -1,4 +1,4 @@
-#labels ReleaseNotes,v268
+#labels ReleaseNotes,v268,ConnectorInstaller
 =Release Notes for the GSA Connectors Installer v2.6.8=
 
 Release Notes
@@ -168,4 +168,3 @@ Eg: "Congratulations!Google Connector(SharePoint1) has been succesfully installe
 31) Start Connector Manager after installation check box is missing in Linux installer.
 32) Connector manager is not running while we click on Run in Terminal option to start the Connector Manager.
 33) The version string in the JAR MANIFEST of the LDAP connector is missing a closing right parenthesis.
-
