@@ -1,4 +1,6 @@
 #labels ReleaseNotes,v268,ConnectorInstaller
+#Summary Release Notes for the GSA Connectors Installer v2.6.8
+
 =Release Notes for the GSA Connectors Installer v2.6.8=
 
 Release Notes
