@@ -6,7 +6,7 @@
 This document walks through the installation process and features of Google Connector Installer 2.6.8 release
 
 
-== 1. Support for installation of Google Search Appliance Connector for LDAP ==
+== 1. Installation of Google Search Appliance Connector for LDAP ==
 
 This section describes the installation prerequisites and installation process for the Google Enterprise Connector for LDAP. 
 
