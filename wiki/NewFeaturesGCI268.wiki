@@ -3,7 +3,7 @@
 
 = Introduction =
 
-This document explains the new features supported in Google Connector Installer 2.6.8 release
+This document walks through the installation process and features of Google Connector Installer 2.6.8 release
 
 
 == 1. Support for installation of Google Search Appliance Connector for LDAP ==
