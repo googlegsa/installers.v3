@@ -102,6 +102,7 @@
 		<!-- Lock down the manager. -->
 		<replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=false" value="manager.locked=true">
 		</replace>
+		<concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">${onboard-flag}=true</concat>
 	</target>
 
 	<target name="offboard-specific">
