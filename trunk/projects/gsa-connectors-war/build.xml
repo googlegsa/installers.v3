@@ -18,50 +18,50 @@
 
 <!-- Author: Darshan Jawalebhoi -->
 
-<!-- 
- This is a ANT build script to generate the a single connector manager WAR 
+<!--
+ This is a ANT build script to generate the a single connector manager WAR
  for multiple connectors. The connectors currently bundled are:
       1. Sharepoint Connector
       2. File Systems Connector
 -->
 <project name="gsa-connectors-war" default="build-all" basedir=".">
-	<property file="build.properties" />
-	<property name="build-dir" value="build" />
-	<property name="third-party-dir" value="${build-dir}/third-party" />
-	<property name="downloads-dir" value="${third-party-dir}/downloads" />
-	<property name="deliverables" value="${build-dir}/deliverables" />
-	<property name="war-exploded" value="${deliverables}/war-exploded" />
+  <property file="build.properties" />
+  <property name="build-dir" value="build" />
+  <property name="third-party-dir" value="${build-dir}/third-party" />
+  <property name="downloads-dir" value="${third-party-dir}/downloads" />
+  <property name="deliverables" value="${build-dir}/deliverables" />
+  <property name="war-exploded" value="${deliverables}/war-exploded" />
 
-	<!-- Initialize -->
-	<target name="clean">
-		<delete dir="${build-dir}" />
-	</target>
-	<target name="init" depends="clean">
-		<mkdir dir="${build-dir}" />
-		<mkdir dir="${downloads-dir}" />
-		<mkdir dir="${war-exploded}" />
-	</target>
+  <!-- Initialize -->
+  <target name="clean">
+    <delete dir="${build-dir}" />
+  </target>
+  <target name="init" depends="clean">
+    <mkdir dir="${build-dir}" />
+    <mkdir dir="${downloads-dir}" />
+    <mkdir dir="${war-exploded}" />
+  </target>
 
-	<!-- Download and extract thrid party components -->
-	<target name="fetch-third-party" depends="fetch-connector-manager,fetch-connector-sharepoint,fetch-connector-filesystem,fetch-connector-ldap" />
-	<target name="fetch-connector-manager">
-		<get dest="${downloads-dir}/connector-manager.zip" src="${connector.manager.download-url}">
-		</get>
-		<unzip dest="${third-party-dir}" src="${downloads-dir}/connector-manager.zip" overwrite="true">
-		</unzip>
-	</target>
-	<target name="fetch-connector-sharepoint">
-		<get dest="${downloads-dir}/connector-sharepoint.zip" src="${connector.sharepoint.download-url}">
-		</get>
-		<unzip dest="${third-party-dir}" src="${downloads-dir}/connector-sharepoint.zip" overwrite="true">
-		</unzip>
-	</target>
-	<target name="fetch-connector-filesystem">
-		<get dest="${downloads-dir}/connector-filesystem.zip" src="${connector.filesystem.download-url}">
-		</get>
-		<unzip dest="${third-party-dir}/connector-filesystem-${dot-version-fs}" src="${downloads-dir}/connector-filesystem.zip" overwrite="true">
-		</unzip>
-	</target>
+  <!-- Download and extract thrid party components -->
+  <target name="fetch-third-party" depends="fetch-connector-manager,fetch-connector-sharepoint,fetch-connector-filesystem,fetch-connector-ldap" />
+  <target name="fetch-connector-manager">
+    <get dest="${downloads-dir}/connector-manager.zip" src="${connector.manager.download-url}">
+    </get>
+    <unzip dest="${third-party-dir}" src="${downloads-dir}/connector-manager.zip" overwrite="true">
+    </unzip>
+  </target>
+  <target name="fetch-connector-sharepoint">
+    <get dest="${downloads-dir}/connector-sharepoint.zip" src="${connector.sharepoint.download-url}">
+    </get>
+    <unzip dest="${third-party-dir}" src="${downloads-dir}/connector-sharepoint.zip" overwrite="true">
+    </unzip>
+  </target>
+  <target name="fetch-connector-filesystem">
+    <get dest="${downloads-dir}/connector-filesystem.zip" src="${connector.filesystem.download-url}">
+    </get>
+    <unzip dest="${third-party-dir}/connector-filesystem-${dot-version-fs}" src="${downloads-dir}/connector-filesystem.zip" overwrite="true">
+    </unzip>
+  </target>
   <target name="fetch-connector-ldap">
     <get dest="${downloads-dir}/connector-ldap.jar" src="${connector.ldap.download-url}">
     </get>
@@ -69,62 +69,61 @@
     </copy>
   </target>
 
-	<!-- Construct WAR -->
-	<target name="assemble-web-app" depends="">
-		<unwar src="${third-party-dir}/connector-manager-${dot-version-cm}/connector-manager.war" dest="${war-exploded}">
-		</unwar>
+  <!-- Construct WAR -->
+  <target name="assemble-web-app" depends="">
+    <unwar src="${third-party-dir}/connector-manager-${dot-version-cm}/connector-manager.war" dest="${war-exploded}">
+    </unwar>
 
-		<!-- Place SharePoint Connector components in the WAR file. -->
-		<copy todir="${war-exploded}/WEB-INF/lib" file="${third-party-dir}/connector-sharepoint-${dot-version-sp}/connector-sharepoint.jar" />
-		<copy todir="${war-exploded}/WEB-INF/lib" flatten="true">
-			<fileset dir="${third-party-dir}/connector-sharepoint-${dot-version-sp}/lib">
-			</fileset>
-		</copy>
-		<mkdir dir="${war-exploded}/WEB-INF/classes" />
+    <!-- Place SharePoint Connector components in the WAR file. -->
+    <copy todir="${war-exploded}/WEB-INF/lib" file="${third-party-dir}/connector-sharepoint.jar" />
+    <copy todir="${war-exploded}/WEB-INF/lib" flatten="true">
+      <fileset dir="${third-party-dir}/lib">
+      </fileset>
+    </copy>
+    <mkdir dir="${war-exploded}/WEB-INF/classes" />
 
-		<!-- Place FileSystem Connector components in the WAR file. -->
-		<copy todir="${war-exploded}/WEB-INF/lib" file="${third-party-dir}/connector-filesystem-${dot-version-fs}/connector-filesystem.jar" />
-		<copy todir="${war-exploded}/WEB-INF/lib" flatten="true">
-			<fileset dir="${third-party-dir}/connector-filesystem-${dot-version-fs}/Lib">
-			</fileset>
-		</copy>
+    <!-- Place FileSystem Connector components in the WAR file. -->
+    <copy todir="${war-exploded}/WEB-INF/lib" file="${third-party-dir}/connector-filesystem-${dot-version-fs}/connector-filesystem.jar" />
+    <copy todir="${war-exploded}/WEB-INF/lib" flatten="true">
+      <fileset dir="${third-party-dir}/connector-filesystem-${dot-version-fs}/Lib">
+      </fileset>
+    </copy>
 
-	   <!-- Place LDAP Connector components in the WAR file. -->
-	    <copy todir="${war-exploded}/WEB-INF/lib" file="${third-party-dir}/connector-ldap-${dot-version-ldap}/connector-ldap.jar" />
-	</target>
+    <!-- Place LDAP Connector components in the WAR file. -->
+    <copy todir="${war-exploded}/WEB-INF/lib" file="${third-party-dir}/connector-ldap-${dot-version-ldap}/connector-ldap.jar" />
+  </target>
 
-	<target name="build-all" depends="clean,init,fetch-third-party,assemble-web-app,war-offboard,war-onboard">
-	</target>
+  <target name="build-all" depends="clean,init,fetch-third-party,assemble-web-app,war-offboard,war-onboard">
+  </target>
 
-	<target name="onboard-specific">
-		<!-- include corrsponding config files -->
-		<copy todir="${war-exploded}/WEB-INF/classes" file="config/onboard/logging.properties" />
-		<!-- Lock down the manager. -->
-		<replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=false" value="manager.locked=true">
-		</replace>
-		<concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">${onboard-flag}=true</concat>
-	</target>
+  <target name="onboard-specific">
+    <!-- include corrsponding config files -->
+    <copy todir="${war-exploded}/WEB-INF/classes" file="config/onboard/logging.properties" />
+    <!-- Lock down the manager. -->
+    <replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=false" value="manager.locked=true">
+    </replace>
+    <concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">${onboard-flag}=true</concat>
+  </target>
 
-	<target name="offboard-specific">
-		<!-- include corrsponding config files -->
-		<copy todir="${war-exploded}/WEB-INF/classes" file="config/offboard/logging.properties" />
-		<!-- Unlock the manager. -->
-		<replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=true" value="manager.locked=false">
-		</replace>
-	</target>
+  <target name="offboard-specific">
+  <!-- include corrsponding config files -->
+    <copy todir="${war-exploded}/WEB-INF/classes" file="config/offboard/logging.properties" />
+    <!-- Unlock the manager. -->
+    <replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=true" value="manager.locked=false">
+    </replace>
+  </target>
 
-	<!-- Build GSA Connectors WAR off-board -->
-	<target name="war-offboard" depends="offboard-specific">
-		<war destfile="${deliverables}/gsa-connectors-offboard.war" basedir="${war-exploded}">
-			<!-- TODO: Add Manifest details -->
-		</war>
-	</target>
+  <!-- Build GSA Connectors WAR off-board -->
+  <target name="war-offboard" depends="offboard-specific">
+    <war destfile="${deliverables}/gsa-connectors-offboard.war" basedir="${war-exploded}">
+      <!-- TODO: Add Manifest details -->
+    </war>
+  </target>
 
-	<!-- Build GSA Connectors WAR on-board -->
-	<target name="war-onboard" depends="onboard-specific">
-		<war destfile="${deliverables}/gsa-connectors-onboard.war" basedir="${war-exploded}">
-			<!-- TODO: Add Manifest details -->
-		</war>
-	</target>
+  <!-- Build GSA Connectors WAR on-board -->
+  <target name="war-onboard" depends="onboard-specific">
+    <war destfile="${deliverables}/gsa-connectors-onboard.war" basedir="${war-exploded}">
+    <!-- TODO: Add Manifest details -->
+    </war>
+  </target>
 </project>
-
