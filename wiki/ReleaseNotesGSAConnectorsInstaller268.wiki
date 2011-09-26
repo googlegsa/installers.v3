@@ -144,7 +144,7 @@ Suggested work-around: Click on "Choose another" button and select the required 
 10) For Database Connector, if user continuously go on adding jars then, no scroll bar appears and finally "Add More" button disappears.
 11) For 64-bit, GCI works only with JDK and is not supported for JRE.
 12) If user skips the "Register Connector-Manager on GSA" panel and clicks "Previous" and "Skip" again, then GCI exits.
-13) In GCI Console mode an extra "*" appears on "Register Connector Manager on GSA" panel.
+13) In GCI Console mode an extra "`*`" appears on "Register Connector Manager on GSA" panel.
 14) After upgrade with 2.6.x over 2.0.x versions, older menus i.e. "Test Connector Manager Connectivity" and "Test Google Search Appliance Connectivity" does not get deleted from Start Menu for Windows and "Test_Connector_Manager_Connectivity" and "Test_Google_Search_Appliance_Connectivity" does not get deleted from connector's home directory for Linux.
 15) Connector Name entered on "Connector Configuration" panel remains unchanged if "Connector type" is changed by navigating "Next" and "Previous" to the "Select Connector" panel.
 16) If CATALINA_HOME is already set in system's environment, then the installed connector service does not start.
