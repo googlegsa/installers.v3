@@ -1,5 +1,4 @@
 #summary New Features supported in GCI 2.6.8 release
-#labels Featured
 
 = Introduction =
 
