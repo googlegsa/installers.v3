@@ -1,6 +1,7 @@
 #summary Release Notes for the GSA Resource Kit for SharePoint Installer v2.8 32-bit
 #labels Featured,Gsarks,v2.8
 
+=Release Notes for the GSA Resource Kit for SharePoint Installer v2.8 32-bit=
 
 
 This document contains the release notes for Google Search Appliance Resource Kit for SharePoint 2.8 (32-bit).
