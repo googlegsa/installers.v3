@@ -1,5 +1,7 @@
 #summary New Features supported in GCI 2.6.8 release
 
+<wiki:toc max_depth="2" />
+
 = Introduction =
 
 This document walks through the installation process and features of Google Connector Installer 2.6.8 release
@@ -7,7 +9,7 @@ This document walks through the installation process and features of Google Conn
 
 == 1. Installation of Google Search Appliance Connector for LDAP ==
 
-This section describes the installation prerequisites and installation process for the Google Enterprise Connector for LDAP. 
+This section describes the installation prerequisites and installation process for the Google Search Appliance Connector for LDAP. 
 
 You can install the connector using an installer that installs Apache Tomcat, a connector manager, and the connector. Google recommends that you use the installer unless you are building the connector manager or connector from the source code or you are installing a patch release that is not packaged with an installer. 
 
@@ -27,7 +29,7 @@ To download and uncompress the installation package:
 
 2.Start a web browser.
 
-3.Navigate to the Downloads tab of this (Google Search appliance Connectors) site.
+3.Navigate to the Downloads tab of this (Google Search Appliance Connectors) site.
 
 4.Download the correct software distribution package to the host where you are installing the software.
 
@@ -106,11 +108,11 @@ Apache Tomcat starts and deploys the connector manager.
 
 15. If the Start LDAP Connector Service after installation checkbox was left unchecked in earlier Step, start the connector service:
 
-To start the connector as a Windows service, click Start > Programs > GoogleConnectors > connector_name > Start LDAP Connector Service.
+To start the connector as a Windows service, click Start > Programs > !GoogleConnectors > connector_name > Start LDAP Connector Service.
 
 You can choose the commands to stop the service or the console on the same menu.
 
-To start the connector as a console on Windows, click Start > Programs > GoogleConnectors > connector_name > Start LDAP Connector Console.
+To start the connector as a console on Windows, click Start > Programs > !GoogleConnectors > connector_name > Start LDAP Connector Console.
 To start the connector as a console on Linux, open a terminal window and navigate to the installation location of the connector, then use the following command:
 
 ./Start_LDAP_Connector_Console
@@ -121,9 +123,9 @@ To stop the connector as a console on Linux, use the following command:
 
 Use the instructions in Configuring the Connector to register the connector manager (http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/ldap_connector.html#CreateLDAP) and add the connector on the Admin Console of the Google Search Appliance.
 
-==2. Installing multiple Google Enterprise Connectors (SharePoint, LDAP, FileSystem)==
+==2. Installing multiple Google Search Appliance Connectors (!SharePoint, LDAP, File System)==
 
-You can install the multiple connectors using the connector installer version 2.6.8. That installs a Apache Tomcat, a connector manager, and the multiple connectors (SharePoint, LDAP, FileSystem). Google recommends that you use the installer unless you are building the connector manager or connector from the source code or you are installing a patch release that is not packaged with an installer. 
+You can install the multiple connectors using the connector installer version 2.6.8. That installs a Apache Tomcat, a connector manager, and the multiple connectors (!SharePoint, LDAP, File System). Google recommends that you use the installer unless you are building the connector manager or connector from the source code or you are installing a patch release that is not packaged with an installer. 
 
 ===Installing the Multiple Connectors Using the Installer===
 
@@ -223,10 +225,10 @@ Apache Tomcat starts and deploys the connector manager.
 
 If the Start Multiple Connector Service after installation check-box was left unchecked in earlier step, start the connector service:
 
-To start the connector as a Windows service, click Start > Programs > GoogleConnectors > connector_name > Start Multiple Connector Service.
+To start the connector as a Windows service, click Start > Programs > !GoogleConnectors > connector_name > Start Multiple Connector Service.
 You can choose the commands to stop the service or the console on the same menu.
 
-To start the connector as a console on Windows, click Start > Programs > GoogleConnectors > connector_name > Start Multiple Connector Console.
+To start the connector as a console on Windows, click Start > Programs > !GoogleConnectors > connector_name > Start Multiple Connector Console.
 To start the connector as a console on Linux, open a terminal window and navigate to the installation location of the connector, then use the following command:
 ./Start_Multiple_Connector_Console
 
@@ -235,20 +237,20 @@ To stop the connector as a console on Linux, use the following command:
 
 Use the following instructions to add the connector on the Admin Console of the Google Search Appliance. 
 
-Configuring the SharePoint Connector: http://code.google.com/apis/searchappliance/documentation/50/connector_admin/sharepoint_connector.html#confconanch
+Configuring the !SharePoint Connector: http://code.google.com/apis/searchappliance/documentation/50/connector_admin/sharepoint_connector.html#confconanch
 
 Configuring the LDAP Connector: http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/ldap_connector.html#CreateLDAP
 
 Configuring the File System Connector: http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/file_connector.html#CreateFileCon
 
 
-==3. Installing the Google Enterprise Connector for FileNet 4.5.1==
+==3. Installing the Google Search Appliance Connector for !FileNet 4.5.1==
 
 ===Before you install the connector===
 
 Java Runtime Environment (JRE) 5 or 6 installed on the connector manager host.
 
-Ensure that the following files are available in the FileNet Workplace installation in the DOWNLOAD directory or folder:
+Ensure that the following files are available in the !FileNet Workplace installation in the DOWNLOAD directory or folder:
 
 Jace.jar
 activation.jar
@@ -257,9 +259,9 @@ stax-api.jar
 xlxpScanner.jar
 xlxpScannerUtils.jar
  
-===Installing the Google Search Appliance Connector for FileNet 4.5.1===
+===Installing the Google Search Appliance Connector for !FileNet 4.5.1===
 
-This section describes the installation process for the Google Search Appliance Connector for FileNet. You install the connector using an installer that installs Apache Tomcat, a connector manager, and the connector on a host computer.
+This section describes the installation process for the Google Search Appliance Connector for !FileNet. You install the connector using an installer that installs Apache Tomcat, a connector manager, and the connector on a host computer.
 
 The instructions that follow are in two parts. In the first part, you download and uncompress the installer package. In the second, you install the software on the connector host.
 
@@ -287,7 +289,7 @@ To run the installer in console mode, execute the command in the step 3 above wi
 
 Go to the following instructions and proceed.
 
-====To install Apache Tomcat, a connector manager, and the Google Search Appliance Connector for FileNet:====
+====To install Apache Tomcat, a connector manager, and the Google Search Appliance Connector for !FileNet:====
 
 To install the connector and its supporting software:
 
@@ -304,20 +306,20 @@ To accept the license, click I accept the terms of the License Agreement.
 To decline the terms, click I do NOT accept the terms of the License Agreement.
     4. On the Connector type installation options panel, select Install single connector types and click Next.
 
-    5. On the Select Connector type panel, select FileNet and click Next.
+    5. On the Select Connector type panel, select !FileNet and click Next.
 
-    6. Select FileNet P8 4.5.1 and click Next.
+    6. Select !FileNet P8 4.5.1 and click Next.
 
-    7. On the FileNet 4.5.1 Connector Dependencies panel, navigate to the location of DOWNLOAD folder.
+    7. On the !FileNet 4.5.1 Connector Dependencies panel, navigate to the location of DOWNLOAD folder.
 
             Ensure that all of the required .jar files (Jace.jar, activation.jar, javaapi.jar, stax-api.jar, xlxpScanner.jar,     xlxpScannerUtils.jar) are in the same folder.
 
     8. On the Connector Configuration panel, enter the name you want to assign to the connector, a port number that is not already            used by another application and Google search appliance IP address.
 The checkbox Start FileNET Connector Service after installation determines whether the connector service start automatically on completion of the installation or must be started manually. It is checked by default.
 
- 9. Click Next.
+    9. Click Next.
 
- 10. On the Choose Java Development Kit panel, choose the correct JDK for the connector to use and or click Search for Others if the correct JDK is not in the list.
+10. On the Choose Java Development Kit panel, choose the correct JDK for the connector to use and or click Search for Others if the correct JDK is not in the list.
 
 The connector requires JDK 1.5 or 1.6.
 
@@ -349,14 +351,14 @@ Apache Tomcat starts and deploys the connector manager.
 
 16. If the Start FileNET Connector Service after installation checkbox was left unchecked in Step 6, start the connector service:
 
-To start the connector as a Windows service, click Start > Programs > GoogleConnectors > connector_name > Start FileNet45 Connector Service.
+To start the connector as a Windows service, click Start > Programs > !GoogleConnectors > connector_name > Start !FileNet45 Connector Service.
 You can choose the commands to stop the service or the console on the same menu.
 
-To start the connector as a console on Windows, click Start > Programs > GoogleConnectors > connector_name > Start FileNet45 Connector Console.
+To start the connector as a console on Windows, click Start > Programs > !GoogleConnectors > connector_name > Start !FileNet45 Connector Console.
 To start the connector as a console on Linux, open a terminal window and navigate to the installation location of the connector, then use the following command:
-./Start_FileNet45_Connector_Console
+./!Start_FileNet45_Connector_Console
 
 To stop the connector as a console on Linux, use the following command:
-./Stop_FileNet45_Connector_Console
+./!Stop_FileNet45_Connector_Console
 
-     17. If you did not register the connector manager from the connector installer, continue with the instructions in this document for Registering a Connector Manager. If you registered the connector manager from the connector installer, continue with the instructions in this document (http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/filenet4_connector.html#deploycm) for Configuring a Connector on the Admin Console.
+ 17. If you did not register the connector manager from the connector installer, continue with the instructions in this document for Registering a Connector Manager. If you registered the connector manager from the connector installer, continue with the instructions in this document (http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/filenet4_connector.html#deploycm) for Configuring a Connector on the Admin Console.
