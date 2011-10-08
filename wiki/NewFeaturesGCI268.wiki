@@ -1,11 +1,16 @@
-#summary New Features supported in GCI 2.6.8 release
+#summary New Features supported in GCI 2.6.8 and 2.8.0 releases
 
 <wiki:toc max_depth="2" />
 
 = Introduction =
 
-This document walks through the installation process and features of Google Connector Installer 2.6.8 release
+This document walks through the installation process and features of Google Connector Installer 2.6.8 and 2.8.0 releases.
+ 
+===See Also===
 
+  * [http://docs.google.com/a/googleapps.com/document/pub?id=1o400sj6_eQUh5awQJ3r96fKNj_LFkssVJKuSV0oTNnI Guide to Connector Release 2.8]
+  * [http://code.google.com/apis/searchappliance/documentation/connectors/relnotes/RELEASE_NOTES_2.6.8.txt Version 2.6.8 Release Notes]
+  * Step-by-step instructions for each connector in the [http://code.google.com/apis/searchappliance/documentation/connectors/ Google Search Appliance Connectors documentation].
 
 == 1. Installation of Google Search Appliance Connector for LDAP ==
 
@@ -124,6 +129,8 @@ To stop the connector as a console on Linux, use the following command:
 Use the instructions in Configuring the Connector to register the connector manager (http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/ldap_connector.html#CreateLDAP) and add the connector on the Admin Console of the Google Search Appliance.
 
 ==2. Installing multiple Google Search Appliance Connectors (!SharePoint, LDAP, File System)==
+
+ <blockquote>*Note:* This feature does not work correctly in version 2.8.0.</blockquote>
 
 You can install the multiple connectors using the connector installer version 2.6.8. That installs a Apache Tomcat, a connector manager, and the multiple connectors (!SharePoint, LDAP, File System). Google recommends that you use the installer unless you are building the connector manager or connector from the source code or you are installing a patch release that is not packaged with an installer. 
 
@@ -361,4 +368,4 @@ To start the connector as a console on Linux, open a terminal window and navigat
 To stop the connector as a console on Linux, use the following command:
 ./!Stop_FileNet45_Connector_Console
 
- 17. If you did not register the connector manager from the connector installer, continue with the instructions in this document for Registering a Connector Manager. If you registered the connector manager from the connector installer, continue with the instructions in this document (http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/filenet4_connector.html#deploycm) for Configuring a Connector on the Admin Console.
+17. If you did not register the connector manager from the connector installer, continue with the instructions in this document for Registering a Connector Manager. If you registered the connector manager from the connector installer, continue with the instructions in this document (http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/filenet4_connector.html#deploycm) for Configuring a Connector on the Admin Console.
