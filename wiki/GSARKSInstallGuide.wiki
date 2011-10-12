@@ -1,0 +1,21 @@
+#summary GSA Resource Kit for SharePoint Install Guide
+#labels Featured,Phase-Deploy
+
+== Introduction ==
+
+You can install following three components using GSA Resource kit for SharePoint installer:
+
+1. Google Search box for SharePoint
+
+2. Google Services for SharePoint
+
+3. GSA Resource Kit for SharePoint (Windows SAML Bridge and Search box test utilities)
+
+
+== Download link ==
+
+http://code.google.com/p/googlesearchapplianceconnectors/downloads/list
+
+== Documentation ==
+
+[ User guide for GSA Resource Kit SharePoint Installer http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/searchbox_sharepoint.html#Installing]
