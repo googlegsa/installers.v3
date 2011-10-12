@@ -18,4 +18,4 @@ http://code.google.com/p/googlesearchapplianceconnectors/downloads/list
 
 == Documentation ==
 
-[ User guide for GSA Resource Kit SharePoint Installer http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/searchbox_sharepoint.html#Installing]
+[http://code.google.com/apis/searchappliance/documentation/connectors/260/connector_admin/searchbox_sharepoint.html#Installing User guide for GSA Resource Kit SharePoint Installer ]
