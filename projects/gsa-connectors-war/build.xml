@@ -31,6 +31,7 @@
   <property name="downloads-dir" value="${third-party-dir}/downloads" />
   <property name="deliverables" value="${build-dir}/deliverables" />
   <property name="war-exploded" value="${deliverables}/war-exploded" />
+  <property name="fs-jar-exploded-dir" value="${deliverables}/war-exploded/fs-jar-exploded" />
 
   <!-- Initialize -->
   <target name="clean">
@@ -40,6 +41,7 @@
     <mkdir dir="${build-dir}" />
     <mkdir dir="${downloads-dir}" />
     <mkdir dir="${war-exploded}" />
+    <mkdir dir="${fs-jar-exploded-dir}" />
   </target>
 
   <!-- Download and extract thrid party components -->
@@ -103,6 +105,23 @@
     <replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=false" value="manager.locked=true">
     </replace>
     <concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">${onboard-flag}=true</concat>
+    <!-- This section does following things
+      1. Unjars the connector-filesystem.jar file in the specified folder.
+      2. Removes the entry for the java file system entry from the connectorDefaults.xml
+      3. Creates the jar back
+      4. Deletes the folder where we exploded the jar.
+    These steps are required because we don't want to ship fs connector with
+    unix file system crawling because that doesn't make sense for onboard connector.
+    If the 'replace' command fails, you are trying to use old version of file system connector.
+    Please change the build.properties to mention correct version.     -->
+    <unjar src="${war-exploded}/WEB-INF/lib/connector-filesystem.jar" dest="${fs-jar-exploded-dir}"></unjar>
+    <replace file="${fs-jar-exploded-dir}/config/connectorDefaults.xml" 
+             token="&lt;ref bean=&#34;java-file-system-type&#34; /&gt;"
+             value="">
+    </replace>
+    <delete file="${war-exploded}/WEB-INF/lib/connector-filesystem.jar"/>
+    <jar destfile="${war-exploded}/WEB-INF/lib/connector-filesystem.jar" basedir="${fs-jar-exploded-dir}"></jar>
+    <delete dir= "${fs-jar-exploded-dir}"/>
   </target>
 
   <target name="offboard-specific">
