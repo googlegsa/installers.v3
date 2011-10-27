@@ -65,12 +65,12 @@
     </unzip>
   </target>
   <target name="fetch-connector-ldap">
-    <get dest="${downloads-dir}/connector-ldap.jar" src="${connector.ldap.download-url}">
+    <get dest="${downloads-dir}/connector-ldap.zip" src="${connector.ldap.download-url}">
     </get>
-    <copy todir="${third-party-dir}/connector-ldap-${dot-version-ldap}" file="${downloads-dir}/connector-ldap.jar" overwrite="true">
-    </copy>
+    <unzip dest="${third-party-dir}" src="${downloads-dir}/connector-ldap.zip" overwrite="true">
+    </unzip>
   </target>
-
+ 
   <!-- Construct WAR -->
   <target name="assemble-web-app" depends="">
     <unwar src="${third-party-dir}/connector-manager-${dot-version-cm}/connector-manager.war" dest="${war-exploded}">
@@ -114,13 +114,13 @@
     unix file system crawling because that doesn't make sense for onboard connector.
     If the 'replace' command fails, you are trying to use old version of file system connector.
     Please change the build.properties to mention correct version.     -->
-    <unjar src="${war-exploded}/WEB-INF/lib/connector-filesystem.jar" dest="${fs-jar-exploded-dir}"></unjar>
+    <unzip src="${war-exploded}/WEB-INF/lib/connector-filesystem.jar" dest="${fs-jar-exploded-dir}"></unzip>
     <replace file="${fs-jar-exploded-dir}/config/connectorDefaults.xml" 
              token="&lt;ref bean=&#34;java-file-system-type&#34; /&gt;"
              value="">
     </replace>
     <delete file="${war-exploded}/WEB-INF/lib/connector-filesystem.jar"/>
-    <jar destfile="${war-exploded}/WEB-INF/lib/connector-filesystem.jar" basedir="${fs-jar-exploded-dir}"></jar>
+    <zip destfile="${war-exploded}/WEB-INF/lib/connector-filesystem.jar" basedir="${fs-jar-exploded-dir}"></zip>
     <delete dir= "${fs-jar-exploded-dir}"/>
   </target>
 
