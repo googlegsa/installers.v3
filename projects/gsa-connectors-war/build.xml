@@ -104,7 +104,8 @@
     <!-- Lock down the manager. -->
     <replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=false" value="manager.locked=true">
     </replace>
-    <concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">${onboard-flag}=true</concat>
+    <concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">${onboard-flag}=true${line.separator}</concat>
+    <concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">feed.contenturl.prefix=http://localhost:8080/connector-manager/getDocumentContent${line.separator}</concat>
     <!-- This section does following things
       1. Unjars the connector-filesystem.jar file in the specified folder.
       2. Removes the entry for the java file system entry from the connectorDefaults.xml
