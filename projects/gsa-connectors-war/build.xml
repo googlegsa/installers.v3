@@ -106,6 +106,8 @@
     </replace>
     <concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">${onboard-flag}=true${line.separator}</concat>
     <concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">feed.contenturl.prefix=http://localhost:7886/connector-manager/getDocumentContent${line.separator}</concat>
+    <!-- Workaround for IPv6 issue. -->
+    <concat append="true" destfile="${war-exploded}/WEB-INF/applicationContext.properties">retriever.allowedHosts=::1,127.0.0.1${line.separator}</concat>
     <!-- This section does following things
       1. Unjars the connector-filesystem.jar file in the specified folder.
       2. Removes the entry for the java file system entry from the connectorDefaults.xml
