@@ -107,6 +107,18 @@
              token="&lt;ref bean=&#34;java-file-system-type&#34; /&gt;"
              value="">
     </replace>
+    <replace file="${fs-jar-exploded-dir}/config/connectorType.xml" 
+             token="&lt;ref bean=&#34;java-file-system-type&#34; /&gt;"
+             value="">
+    </replace>
+    <replace file="${fs-jar-exploded-dir}/config/connectorDefaults.xml" 
+             token="&lt;ref bean=&#34;windows-file-system-type&#34; /&gt;"
+             value="">
+    </replace>
+    <replace file="${fs-jar-exploded-dir}/config/connectorType.xml" 
+             token="&lt;ref bean=&#34;windows-file-system-type&#34; /&gt;"
+             value="">
+    </replace>
     <delete file="${war-exploded}/WEB-INF/lib/connector-filesystem.jar"/>
     <zip destfile="${war-exploded}/WEB-INF/lib/connector-filesystem.jar" basedir="${fs-jar-exploded-dir}"></zip>
     <delete dir= "${fs-jar-exploded-dir}"/>
