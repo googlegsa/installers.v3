@@ -69,3 +69,15 @@ http://publib.boulder.ibm.com/infocenter/dsichelp/ds8000ic/index.jsp?topic=/com.
 1.Set Java path under PATH environment variable. This path should be full path till ../Java/bin folder. For example: C:\Program Files\Java\JDK1.6.0_24\bin
 
 2. Launch the installer.
+
+==_Problem_==
+
+Connector manager registration step fails even after having correct JVM on Windows. Installer throws error "The appliance could not connect to the connector manager as specified in the location. Make sure that the URL is correct or try again later."
+
+==_Solution1_==
+
+Make sure that the GSA is reachable from the connector host.
+
+==_Solution2_==
+
+Make sure that the connector manager port is not blocked by the firewall. Check your Windows firewall settings and disable the firewall that prevents the connector manager to communicate with the GSA.
