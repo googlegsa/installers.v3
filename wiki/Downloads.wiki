@@ -1,0 +1,16 @@
+#summary Downloading the Google Search Appliance Connectors
+#labels Phase-Deploy
+*Downloading the Google Search Appliance Connectors*
+
+For customers who qualify for enterprise-level support, Google
+provides support for the Google Search Appliance Connectors. You can
+go to the [http://www.google.com/enterprise/portal Enterprise Support Portal]
+to download supported versions of the connectors or contact Google Enterprise 
+Support.
+
+To download installers for the Google Search Appliance Connectors or the
+Google Search Appliance Resource Kit for !SharePoint, see the
+[https://code.google.com/p/googlesearchapplianceconnectors/downloads/list Downloads page]
+on this code site.
+
+Google may not provide support for builds downloaded from the code sites.
