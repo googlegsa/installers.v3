@@ -1,5 +1,5 @@
 #summary Release Notes for the GSA Resource Kit for SharePoint Installer v2.8 32-bit
-#labels Featured,Gsarks,v2.8,32bit,Deprecated,Phase-Deploy
+#labels Gsarks,v2.8,32bit,Deprecated,Phase-Deploy
 
 =Release Notes for the GSA Resource Kit for SharePoint Installer v2.8 32-bit=
 
