@@ -1,5 +1,5 @@
 #summary Release Notes for the GSA Connectors Installer v2.6.8
-#labels ReleaseNotes,v268,ConnectorInstaller
+#labels ReleaseNotes,v268,ConnectorInstaller,Deprecated
 
 =Release Notes for the GSA Connectors Installer v2.6.8=
 
