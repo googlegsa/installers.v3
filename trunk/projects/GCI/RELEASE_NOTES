@@ -8,8 +8,8 @@ supplements the main documentation.
 Web Site: http://code.google.com/p/googlesearchapplianceconnectors/
 
 
-Release 3.2.8, July, 2014
-=========================
+Release 3.2.8, September, 2014
+==============================
 
 Introduction
 ------------
@@ -43,6 +43,11 @@ Issues Fixed Since 3.2.6
 
 16231462 - On Windows, after an upgrade, a second entry appears under Control 
            Panel > Programs > Programs and Features for the upgraded connector.
+
+17526596 - Environment variables in setenv.bat and setenv.sh, containing paths
+           to third party jars and Java settings, are lost if connector upgrade
+           also includes an upgrade of Tomcat.  This affected upgrades from
+           version 3.2.2 or earlier to version 3.2.4 or 3.2.6.
 
 Platform Support
 ------------------
@@ -247,6 +252,11 @@ This release includes the following versions of each component:
 Please refer to respective release notes of each component for more information.
 Keep in mind that we are continuing to work on Google Connector Installer and
 things may change in the future.
+
+Issues Fixed Since 3.2.2
+------------------------
+11464766 - Upgrade Tomcat to version 7.0.47. This will also upgrade Tomcat if
+           necessary during connector upgrades.
 
 Platform Support
 ----------------
