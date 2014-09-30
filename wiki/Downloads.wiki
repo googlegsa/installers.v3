@@ -4,8 +4,8 @@
 
 For customers who qualify for enterprise-level support, Google
 provides support for the Google Search Appliance Connectors. You can
-go to the [http://www.google.com/enterprise/portal Enterprise Support Portal]
-to download supported versions of the connectors or contact Google Enterprise 
+go to the [http://www.google.com/enterprise/portal Google for Work Support Portal]
+to download supported versions of the connectors or contact Google for Work 
 Support.
 
 To download installers for the Google Search Appliance Connectors or the
