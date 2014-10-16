@@ -38,6 +38,11 @@ Issues Fixed Since 3.2.6
            releases, and it is not necessary to install Connector for Active 
            Directory Groups separately.
 
+15432719 - On Windows, after an upgrade, logging.properties may have an invalid 
+           path for java.util.logging.FileHandler.pattern.  This issue has been
+           resolved by allowing JULI LogManager to resolve the catalina.base 
+           variable in the path.
+
 15441538 - Google Connector Installer no longer includes the Tomcat Native 
            Library with the installed Tomcat.
 
@@ -48,6 +53,9 @@ Issues Fixed Since 3.2.6
            to third party jars and Java settings, are lost if connector upgrade
            also includes an upgrade of Tomcat.  This affected upgrades from
            version 3.2.2 or earlier to version 3.2.4 or 3.2.6.
+
+17995084 - On Windows, after an upgrade where the user chose to start the 
+           service after installation, the service may not be started.
 
 Platform Support
 ------------------
