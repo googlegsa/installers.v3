@@ -47,12 +47,14 @@
 
   <target name="fetch-third-party"
           description="Download the third-party components.">
-    <get dest="${downloads-dir}">
-      <url url="${connector.manager.download-url}" />
-      <url url="${connector.sharepoint.download-url}" />
-      <url url="${connector.filesystem.download-url}" />
-      <url url="${connector.ldap.download-url}" />
-    </get>
+    <get src="${connector.manager.download-url}" 
+         dest="${downloads-dir}/${connector.manager.filename}"/>
+    <get src="${connector.sharepoint.download-url}" 
+         dest="${downloads-dir}/${connector.sharepoint.filename}"/>
+    <get src="${connector.filesystem.download-url}" 
+         dest="${downloads-dir}/${connector.filesystem.filename}"/>
+    <get src="${connector.ldap.download-url}" 
+         dest="${downloads-dir}/${connector.ldap.filename}"/>
   </target>
 
   <target name="assemble-web-app"
