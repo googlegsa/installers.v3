@@ -32,7 +32,7 @@
   <property name="downloads-dir" value="${third-party-dir}/downloads" />
   <property name="deliverables" value="${build-dir}/deliverables" />
   <property name="war-exploded" value="${deliverables}/war-exploded" />
-  <property name="fs-jar-exploded-dir" value="${deliverables}/war-exploded/fs-jar-exploded" />
+  <property name="fs-jar-exploded-dir" value="${deliverables}/fs-jar-exploded" />
 
   <target name="clean">
     <delete dir="${build-dir}" />
@@ -78,16 +78,14 @@
     <mkdir dir="${war-exploded}/WEB-INF/classes" />
   </target>
 
-  <!-- war-offboard must come first because war-onboard uses and
-       overwrites the same ${war-exploded} directory. -->
   <target name="build-all"
-          depends="init,fetch-third-party,assemble-web-app,war-offboard,war-onboard"
+          depends="init,fetch-third-party,assemble-web-app,war-onboard"
           description="Build WAR files from scratch. Default target.">
   </target>
 
   <target name="onboard-specific">
     <!-- include corresponding config files -->
-    <copy todir="${war-exploded}/WEB-INF/classes" file="config/onboard/logging.properties" />
+    <copy todir="${war-exploded}/WEB-INF/classes" file="logging.properties" />
     <!-- Lock down the manager. -->
     <replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=false" value="manager.locked=true">
     </replace>
@@ -124,21 +122,6 @@
     <delete file="${war-exploded}/WEB-INF/lib/connector-filesystem.jar"/>
     <zip destfile="${war-exploded}/WEB-INF/lib/connector-filesystem.jar" basedir="${fs-jar-exploded-dir}"></zip>
     <delete dir= "${fs-jar-exploded-dir}"/>
-  </target>
-
-  <target name="offboard-specific">
-  <!-- include corresponding config files -->
-    <copy todir="${war-exploded}/WEB-INF/classes" file="config/offboard/logging.properties" />
-    <!-- Unlock the manager. -->
-    <replace file="${war-exploded}/WEB-INF/applicationContext.properties" token="manager.locked=true" value="manager.locked=false">
-    </replace>
-  </target>
-
-  <target name="war-offboard" depends="offboard-specific"
-          description="Build GSA Connectors WAR off-board.">
-    <war destfile="${deliverables}/gsa-connectors-offboard.war" basedir="${war-exploded}">
-      <!-- TODO: Add Manifest details -->
-    </war>
   </target>
 
   <target name="war-onboard" depends="onboard-specific"
