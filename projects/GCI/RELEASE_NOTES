@@ -8,6 +8,70 @@ supplements the main documentation.
 Web Site: http://code.google.com/p/googlesearchapplianceconnectors/
 
 
+Release 3.2.8, September, 2014
+==============================
+
+Introduction
+------------
+This release includes the following versions of each component:
+
+  * Google Search Appliance Connector Manager: v 3.2.6
+  * Google Search Appliance Connector for Active Directory Groups: v 3.2.8
+  * Google Search Appliance Connector for Databases: v 3.2.4
+  * Google Search Appliance Connector for Documentum: v 3.2.8
+  * Google Search Appliance Connector for File Systems: v 3.2.4
+  * Google Search Appliance Connector for FileNet: v 3.2.8
+  * Google Search Appliance Connector for LDAP: v 3.2.8
+  * Google Search Appliance Connector for Livelink: v 3.2.6
+  * Google Search Appliance Connector for Lotus Notes: v 3.2.8
+  * Google Search Appliance Connector for SharePoint: v 3.2.8
+
+Please refer to respective release notes of each component for more
+information.
+
+Issues Fixed Since 3.2.6
+------------------------
+12606691 - Connector for Active Directory Groups can now be installed as a 
+           separate connector type.  Please note, if you are installing
+           Connector for SharePoint, Connector for Active Directory Groups will
+           continue to be installed automatically, as it has been in past 
+           releases, and it is not necessary to install Connector for Active 
+           Directory Groups separately.
+
+15432719 - On Windows, after an upgrade, logging.properties may have an invalid 
+           path for java.util.logging.FileHandler.pattern.  This issue has been
+           resolved by allowing JULI LogManager to resolve the catalina.base 
+           variable in the path.
+
+15441538 - Google Connector Installer no longer includes the Tomcat Native 
+           Library with the installed Tomcat.
+
+16231462 - On Windows, after an upgrade, a second entry appears under Control 
+           Panel > Programs > Programs and Features for the upgraded connector.
+
+17526596 - Environment variables in setenv.bat and setenv.sh, containing paths
+           to third party jars and Java settings, are lost if connector upgrade
+           also includes an upgrade of Tomcat.  This affected upgrades from
+           version 3.2.2 or earlier to version 3.2.4 or 3.2.6.
+
+17995084 - On Windows, after an upgrade where the user chose to start the 
+           service after installation, the service may not be started.
+
+Platform Support
+------------------
+The connector can be installed and run on both 32-bit and 64-bit Windows and
+Linux environments.
+
+--Microsoft Windows Server 2012
+--Microsoft Windows Server 2008 R2
+--Microsoft Windows Server 2008
+--Microsoft Windows Server 2003
+--Red Hat Enterprise Linux 6
+--Red Hat Enterprise Linux 5
+--SUSE Enterprise Linux Server 10
+--SUSE Enterprise Linux Server 11
+
+
 Release 3.2.6, May, 2014
 ========================
 
