@@ -8,6 +8,174 @@ supplements the main documentation.
 Web Site: http://code.google.com/p/googlesearchapplianceconnectors/
 
 
+Release 3.2.6, May, 2014
+========================
+
+INTRODUCTION
+------------
+This release includes the following versions of each component:
+
+  * Google Search Appliance Connector Manager: v 3.2.6
+  * Google Search Appliance Connector for Databases: v 3.2.4
+  * Google Search Appliance Connector for Documentum: v 3.2.4
+  * Google Search Appliance Connector for File Systems: v 3.2.4
+  * Google Search Appliance Connector for FileNet: v 3.2.4
+  * Google Search Appliance Connector for LDAP: v 3.0.8
+  * Google Search Appliance Connector for Livelink: v 3.2.6
+  * Google Search Appliance Connector for Lotus Notes: v 3.2.4
+  * Google Search Appliance Connector for SharePoint: v 3.2.6
+
+Please refer to respective release notes of each component for more information.
+Keep in mind that we are continuing to work on Google Connector Installer and things may change in
+the future.
+
+Issues Fixed Since 3.2.4
+------------------------
+14590935 - Customers using offboard Google Search Appliance Connectors versions 3.0.2 through 3.2.4
+           can be affected by the CVE-2014-0160 "Heartbleed" OpenSSL vulnerability. This 
+           vulnerability affects customers who have deployed Tomcat with HTTPS enabled (it is not 
+           enabled by default). Both manual installations as well as Google Connector Installer 
+           (GCI) based installations are affected. Onboard connectors are not affected. For more 
+           information, please visit the Enterprise Support Portal: 
+           http://www.google.com/enterprise/portal
+
+Platform Support
+----------------
+The connector can be installed on x86/x64 Windows (2003/2008/2012) and Linux environments.
+
+Certified Against
+-----------------
+
+32-bit:
+-------
+Microsoft Windows Server 2008
+Windows Server Standard Service Pack 2
+Processor: Intel(R) Xeon(R) CPU
+E5504 @ 2.00 GHz 2.00 GHz
+Memory (RAM): 4.00 GB
+System Type: 32-bit Operating System
+
+Microsoft Windows Server 2003
+Enterprise Edition
+Intel(R) Xeon(R) CPU
+E5504 @ 2.00GHz, 4.00 GB of RAM
+
+Red Hat Linux 6 (32-bit)
+Intel(R) Xeon(R) CPU
+E5504 @ 2.00GHz, 4.00 GB of RAM
+
+Red Hat Linux 5 (32-bit)
+Intel(R) Xeon(R) CPU
+E5504 @ 2.00GHz, 4.00 GB of RAM
+
+SUSE 11 (32-bit)
+Intel(R) Xeon(R) CPU
+E5504 @ 2.00GHz, 4.00 GB of RAM
+
+SUSE 10 (32-bit)
+Intel(R) Xeon(R) CPU
+E5504 @ 2.00GHz, 4.00 GB of RAM
+
+64-bit:
+--------
+Microsoft Windows Server 2012
+Standard x64 Edition
+Intel  Xeon  CPU
+E7330 @ 2.40GHz, 12.00 GB of RAM
+
+Microsoft Windows Server 2008
+Windows Server Standard Service Pack 2
+Processor: Intel(R) Xeon(R) CPU
+E5620 @ 2.40 GHz 2.39 GHz
+Memory (RAM): 4.00 GB
+System Type: 64-bit Operating System
+
+Microsoft Windows Server 2008 R2
+Enterprise x64 Edition
+Intel(R) Xeon(R) CPU
+E5504 @ 2.00GHz, 4.00 GB of RAM
+
+Microsoft Windows Server 2003
+Enterprise x64 Edition
+Intel(R) Xeon(R) CPU
+E5504 @ 2.00GHz, 2.00 GB of RAM
+
+Known Issues/Limitations
+------------------------
+1. Installer does not support '~' property while specifying dependency file locations.
+2. Installer does not support '-' while entering connector instance name.
+3. Issue 1931949 - On Linux, Test connectivity feature is available only in GUI mode and not in 
+   console mode.
+4. On Linux, you need to be a root user to run the installer.
+5. In case of Upgrade of FileNet 4.0 connector from 2.x to 3.2.2 or above, WSI option is not added
+   to the service.bat (Windows) and catalina.sh (Linux).  
+   Suggested Workaround Steps for Service.bat (Windows):
+     a. Append "-Dwasp.location=<SELECTED WSI FOLDER PATH>" in "%EXECUTABLE%" //US//, after 
+        "-Djava.util.logging.config.file" option.
+     b. Go to the folder INSTALL_LOCATION/Tomcat/bin in command prompt.
+     c. Run command "Service.bat uninstall" to uninstall the service.
+     d. Run command "Service.bat install" to install the service.
+   Suggested Workaround Steps for catalina.sh (Linux):
+     a. Stop the connector service
+     b. Append "-Dwasp.location=<SELECTED WSI FOLDER PATH>" after "JAVA_OPTS="$JAVA_OPTS -Xms256m 
+     -Xmx1024m"
+     c. Start the connector service.
+6. For Database Connector, if user continuously go on adding jars then, no scroll bar appears and
+   finally "Add More" button disappears.
+7. If user skips the "Register Connector-Manager on GSA" panel and clicks "Previous" and "Skip" 
+    again, then GCI exits.
+8. In GCI Console mode an extra "*" appears on "Register Connector Manager on GSA" panel.
+9. After upgrade with 3.x over 2.0.x versions, older menus i.e. "Test Connector Manager 
+    Connectivity" and "Test Google Search Appliance Connectivity" does not get deleted from Start 
+    Menu for Windows and "Test_Connector_Manager_Connectivity" and 
+    "Test_Google_Search_Appliance_Connectivity" does not get deleted from connector's home 
+    directory for Linux.
+10. Connector Name entered on "Connector Configuration" panel remains unchanged if "Connector type"
+    is changed by navigating "Next" and "Previous" to the "Select Connector" panel.
+11. If CATALINA_HOME is already set in system's environment, then the installed connector service
+    does not start.
+12. On "Register Connector Manager with GSA" panel, if any error message occurs on clicking "Next",
+    then clicking "Skip" button installer dis-appears. No summary panel will be displayed. For E.g.:
+    a. Execute Google Connector Installer. Continue installation process till "Register Connector 
+       Manager with GSA" panel appears. Click Next button without entering any password.
+    b. An error message is displayed that Password should not be left blank.
+    c. Skip GSA registration by clicking Skip button.
+    d. Connector installation is successful, however, installer dis-appears. No summary panel will 
+       be displayed.
+13. Few panels of Google Connector Installer are not localized.
+14. After upgrade with 3.x over 2.x versions, an empty menu with name "Google Search Appliance 
+    Connector 3.2.6" is created under Start Menu Program Files. The same is applicable if upgrade 
+    is done on Windows x64 based environments
+15. "Add More" button on "Database Connector Dependencies" panel does not get enabled after Deleting
+    the last row. You need to re-browse and select the jar to get it enabled.
+16. In Console/UI mode on Windows, after successful uninstallation of a connector, a message "Some 
+    items could not be removed" is displayed. This is typically the case if more than one connector
+    installations share the same shortcut folder
+17. After upgrade over the lower versions, an update complete message does not contain the version 
+    to which it is updated.  This is observed in GCI console mode.  Eg: "Congratulations!  Google 
+    Connector (SharePoint1) has been successfully installed/updated to: 3.2.2"
+18. The page to register LDAP connector not appearing after installing connector manager on LINUX.
+19. While upgrading connector with another type of connector,  shortcut labels are not getting 
+    modified with new Connector type.
+20. While upgrading the connector with latest version, the shortcuts are not getting moved from old
+    Shortcut group to new Shortcut group.  Example : Connector Installed with GCI 2.6.0, upgrading 
+    with GCI 3.2.6, shortcuts are not getting moved from "<Shortcut Folder> 2.6.0" to "<Shortcut 
+    Folder> 3.2.6".
+21. On Console , while upgrading the connector, from the Upgrade summary message if we go back to 
+    select another JVM error message "Invalid JVM" is displayed.
+22. While upgrading one type of connector with other type, install and uninstall count for preview
+    type of connector are not getting modified in registry entries.
+23. For very first installation of any type of connector, Uninstall count for connector is 
+    initializing to 1 in registry entries.
+24. For UI Mode, The page to display the already installed connectors does not display connector 
+    type and version of connector.
+25. Warning message not displayed, when we type N during the License Agreement in Console mode 
+    Installation.
+26. Start Connector Manager after installation check box is missing in Linux installer.
+27. Connector manager is not running while we click on Run in Terminal option to start the 
+    Connector Manager.
+
+
 Release 3.2.4, March, 2014
 ==========================
 
