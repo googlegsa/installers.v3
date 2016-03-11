@@ -5,7 +5,77 @@ This document contains the release notes for Google Connector Installer.  The
 following sections describe the release in detail and provide information that
 supplements the main documentation.
 
-Web Site: http://code.google.com/p/googlesearchapplianceconnectors/
+Web Site: https://github.com/googlegsa/installers.v3
+
+Version 4 connectors are being developed with the Adaptor Library, a new
+connector framework. See the Adaptors page for more information:
+
+    http://googlegsa.github.io/adaptor/index.html
+
+
+Release 3.4.0, March, 2016
+==========================
+
+Introduction
+------------
+This release includes the following versions of each component:
+
+  * Google Search Appliance Connector Manager: v 3.4.0
+  * Google Search Appliance Connector for Active Directory Groups: v 3.2.8
+  * Google Search Appliance Connector for Documentum: v 3.4.0
+  * Google Search Appliance Connector for FileNet: v 3.4.0
+  * Google Search Appliance Connector for Livelink: v 3.4.0
+  * Google Search Appliance Connector for Lotus Notes: v 3.4.0
+
+Please refer to respective release notes of each component for more information.
+
+Known Issues
+------------
+17803711 - On Windows Server 2012 R2, GCI sometimes crashes with an error
+           stating "Windows DLL failed to load". This issue may be resolved
+           by running GCI in Windows 7 compatibility mode.
+
+           For information about running GCI in compatibility mode, see:
+
+           http://windows.microsoft.com/en-us/windows/make-older-programs-run
+
+17770085 - GCI lists only 64-bit JVMs as JDK/JRE options, but does not show
+           32-bit JVMs. However, it allows you to manually browse and choose
+           32-bit JRE.
+
+For additional known issues, see the Known Issues/Limitations section in the
+3.2.6 release below.
+
+Issues Fixed Since 3.2.8
+------------------------
+25521120 - The Connectors for Databases, File Systems, LDAP, and SharePoint
+           have been removed. See version 4 for the latest version of those
+           connectors. This release includes the Connectors for AD Groups,
+           Documentum, FileNet, and Lotus Notes.
+
+25395410 - Disabled SSLv3 by default in server.xml. Added attribute
+           sslEnabledProtocols = "TLSv1,TLSv1.1,TLSv1.2" to commented-out
+           JSSE-based HTTPS connector in server.xml.
+
+25394441 - Tomcat has been upgraded from 7.0.47 to 7.0.65.
+
+18532493 - Added Java version 8 support.
+
+13101751 - Upgraded Connector Manager 3.4.0 with Guava 11.0.2.
+
+Platform Support
+----------------
+The connector can be installed and run on both 32-bit and 64-bit Windows and
+Linux environments.
+
+--Microsoft Windows Server 2012 R2
+--Microsoft Windows Server 2012
+--Microsoft Windows Server 2008 R2
+--Microsoft Windows Server 2008
+--Red Hat Enterprise Linux 6
+--Red Hat Enterprise Linux 5
+--SUSE Enterprise Linux Server 10
+--SUSE Enterprise Linux Server 11
 
 
 Release 3.2.8, September, 2014
