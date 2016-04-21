@@ -1,0 +1,95 @@
+Google Connector Installer (GCI) 3.2.8 Installation steps:
+-------------------------------------------------------------------------------------
+
+1. Download and extract the GCI_3.2.8_Windows.zip (Windows) or GCI_3.2.8_Linux.zip (Linux).
+
+2. Copy the extracted GCI.exe (Windows) or GCI.bin (Linux) to some location on your machine.
+
+
+Pre-requisites:
+---------------------
+
+1. Before starting installation, make sure that GCI.exe/GCI.bin file has execute permission.
+
+2. Make sure that a Java Runtime Environment (JRE) 1.6 or above is installed on the machine.
+
+3. You will need access to the following dependency files/folders before you start installing the connectors:
+
+   a. Google Search Appliance Connector for SharePoint: v 3.2.8
+      - None
+
+   b. Google Search Appliance Connector for FileNet P8 4.0,4.5: v 3.2.8
+      -Jace.jar
+
+       Make sure that  these files are available in your FileNet Workplace installation in the "WSI" directory or folder:
+
+       Files under "lib" folder
+       -------------------------------
+      -builtin_serialization.jar
+      -wasp.jar
+      -activation.jar
+      -wsdl_api.jar
+      -jaxrpc.jar
+      -jetty.jar
+      -saaj.jar
+      -log4j.1.2.15.jar
+
+      Files under "conf" folder
+      ----------------------------------
+      -Clientconf.xml
+      -Policy.xml
+      -Policy10.xsd
+      -package12.xsd
+      -package13.xsd
+
+   c. Google Search Appliance Connector for FileNet P8 4.5.1: v 3.2.8
+
+       Make sure that  these files are available in your FileNet Workplace installation in the "DOWNLOAD" directory or folder:
+       Files under "DOWNLOAD" folder
+       -------------------------------
+      -Jace.jar
+      -stax-api.jar
+      -xlxpScanner.jar
+      -xlxpScannerUtils.jar
+
+   d. Google Search Appliance Connector for Livelink: v 3.2.6
+      -lapi.jar
+      -llssl.jar (optional)
+
+   e. Google Search Appliance Connector for Documentum Content Server 6.0, 6.5: v 3.2.8
+      -$DCTM_HOME\Documentum\shared\dfc.jar
+      -$DCTM_HOME\Documentum\config (Folder name)
+
+   f. Google Search Appliance Connector for File Systems: v 3.2.4
+      - None
+
+   g. Google Search Appliance Connector for LDAP: v 3.2.8
+      - None
+
+   h. Google Search Appliance Connector for Databases: v 3.2.4
+      - Select single or multiple JDBC jar file/files as required.
+
+   i. Google Search Appliance Connector for Lotus Notes: v 3.2.8
+      - Lotus Notes client must be installed.
+
+
+Installation on Windows:
+-----------------------------------
+1. UI mode installation:
+
+Double-click on GCI.exe or On command prompt, navigate to the path where GCI.exe is copied and execute command 'GCI.exe'
+
+2. Console mode installation:
+
+On command prompt, navigate to the path where GCI.exe is copied and execute command 'GCI.exe -i console'
+
+
+Installation on Linux:
+------------------------------
+1. UI mode installation:
+
+On Linux terminal, navigate to the path where GCI.bin is copied and execute command './GCI.bin LAX_VM path_to_JRE' (For example, ./GCI.bin LAX_VM /home/jre1.5.0_18/bin/java)
+
+2. Console mode installation:
+
+On Linux terminal, navigate to the path where GCI.bin is copied and execute command './GCI.bin LAX_VM path_to_JRE -i console' (For example, ./GCI.bin LAX_VM /home/jre1.5.0_18/bin/java -i console)
