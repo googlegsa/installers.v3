@@ -13,7 +13,7 @@ connector framework. See the Adaptors page for more information:
     http://googlegsa.github.io/adaptor/index.html
 
 
-Release 3.4.0, March, 2016
+Release 3.4.0, December, 2016
 ==========================
 
 Introduction
@@ -21,7 +21,6 @@ Introduction
 This release includes the following versions of each component:
 
   * Google Search Appliance Connector Manager: v 3.4.0
-  * Google Search Appliance Connector for Active Directory Groups: v 3.2.8
   * Google Search Appliance Connector for Documentum: v 3.4.0
   * Google Search Appliance Connector for FileNet: v 3.4.0
   * Google Search Appliance Connector for Livelink: v 3.4.0
@@ -54,8 +53,8 @@ Issues Fixed Since 3.2.8
 
 25521120 - The Connectors for Databases, File Systems, LDAP, and SharePoint
            have been removed. See version 4 for the latest version of those
-           connectors. This release includes the Connectors for AD Groups,
-           Documentum, FileNet, Livelink and Lotus Notes.
+           connectors. This release includes the Connectors for Documentum,
+           FileNet, Livelink and Lotus Notes.
 
 25395410 - Disabled SSLv3 by default in server.xml. Added attribute
            sslEnabledProtocols = "TLSv1,TLSv1.1,TLSv1.2" to commented-out
